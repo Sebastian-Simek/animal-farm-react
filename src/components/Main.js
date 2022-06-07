@@ -1,9 +1,15 @@
 import backgroundImg from '../background.png';
+import AnimalList from './AnimalList';
 
-export default function Main() {
+export default function Main({ animals }) {
   return (
     <main style={{ backgroundImage: `url(${backgroundImg})` }}>
-        hello from main.js
+      
+      {
+        animals.map((animal, i) => <AnimalList key={animal.name + i} {...animal} />
+
+        )
+      }
     </main>
   );
 }
